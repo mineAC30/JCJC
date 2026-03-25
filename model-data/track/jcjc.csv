@@ -1,0 +1,15 @@
+section,type,length_mm,slope_deg,note
+1,straight,218,0,B-1 ストレート
+2,curve,162,0,B-3 カーブ 90°（R=103mm）
+3,straight,218,0,B-1 ストレート
+4,curve,162,0,B-3 カーブ 90°（R=103mm）
+5,straight,432,0,B-2 ワイドストレート
+6,slope_up,210,29,B-5 スロープ（上り）
+7,slope_down,210,29,B-5 スロープ（下り）
+8,straight,218,0,B-1 ストレート
+9,curve,162,0,B-3 カーブ 90°（R=103mm）
+10,lane_change,436,0,B-4 レーンチェンジ
+11,straight,218,0,B-1 ストレート
+12,curve,162,0,B-3 カーブ 90°（R=103mm）
+13,straight,218,0,B-1 ストレート
+14,curve,162,0,B-3 カーブ 90°（R=103mm）

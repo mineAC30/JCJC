@@ -1,0 +1,19 @@
+﻿Mini 4WD motor sheet template (official-range based),,,,,,,,,,,,
+Note,100rpm-step row templates per motor. Only RPM rows are prefilled from official ranges; torque/current/voltage cells are intentionally left blank because the official Tamiya motor guide does not publish per-100rpm tabular values.,,,,,,,,,,,
+,,,,,,,,,,,,
+MotorName,ItemNo,ShaftType,VoltageMin_V,VoltageMax_V,RPM_Min,RPM_Max,Torque_Min_mNm,Torque_Max_mNm,Current_Min_A,Current_Max_A,Notes,Source
+Torque-Tuned 2 PRO,15487,double,2.4,3,12200,14400,1.6,1.8,1.7,2,,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Light-Dash PRO,15402,double,2.4,3,14600,17800,1.3,1.9,1.5,2.2,,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Atomic-Tuned 2 PRO,15489,double,2.4,3,12300,14500,1.6,1.8,1.5,1.7,,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Hyper-Dash PRO,15375,double,2.4,3,17200,21200,1.4,1.9,1.6,3,,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Rev-Tuned 2 PRO,15488,double,2.4,3,12700,14900,1.5,1.8,1.8,2.2,,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Mach-Dash PRO,15433,double,2.4,3,20000,24500,1.3,1.8,2.6,3.5,small-dia. tires recommended,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Torque-Tuned 2,15484,single,2.4,3,12300,14700,1.6,2,1.7,2,,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Light-Dash,15455,single,2.4,3,14600,17800,1.3,1.9,1.5,2.2,,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Sprint-Dash,15318,single,2.4,3,20700,27200,1.3,1.8,2.8,3.8,small-dia. tires recommended,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Atomic-Tuned 2,15486,single,2.4,3,12700,14900,1.5,1.8,1.8,2.2,,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Hyper-Dash 3,15477,single,2.4,3,17200,21200,1.4,1.9,1.6,3,,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Ultra-Dash,15307,single,2.4,3,20400,27500,1.4,1.9,4,5,not for official Tamiya races in Japan,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Rev-Tuned 2,15485,single,2.4,3,13400,15200,1.2,1.5,1.6,2,,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Power-Dash,15317,single,2.4,3,19900,23600,1.5,2,2.5,3.3,,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf
+Plasma-Dash,15186,single,2.4,3,25000,28000,1.4,1.9,4.1,5.2,not for official Tamiya races in Japan,https://www.tamiya.com/cms/english/mini4wd/setupguide/motorguide.pdf

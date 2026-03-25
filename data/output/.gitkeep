@@ -1,0 +1,2 @@
+# このフォルダにシミュレーション出力が生成されます
+# 各実行は data/output/{YYYYMMDD_HHMMSS}_{motor_name}/ に保存されます

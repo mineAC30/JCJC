@@ -1,0 +1,17 @@
+# デフォルト設定
+# 単位はすべて docstring・変数名・コメントで明示すること
+
+race:
+  time_limit_s: 600           # 制限時間 [s]（10分=600, 20分=1200）
+  dnf_speed_threshold_mps: 0.05  # 完走不能判定速度 [m/s]
+
+simulation:
+  # 将来の動的モデル（時間刻み積分）用に予約
+  dt_s: 0.01                  # シミュレーション時間刻み [s]
+
+physics:
+  gravity_mps2: 9.81
+  # 以下はすべて「仮説値」。実測で補正すること。
+  obstacle_loss_coefficient: 0.15     # 段差速度低下係数（無次元）[仮説値]
+  corner_friction_coefficient: 0.80   # コーナー横摩擦係数（無次元）[仮説値]
+  lane_change_speed_factor: 0.85      # レーンチェンジ速度係数（無次元）[仮説値]

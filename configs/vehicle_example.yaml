@@ -1,0 +1,70 @@
+# 車体設定例
+# 実測値: 2026-03-01 テスト走行 / runs.csv より
+# 「仮説値」とコメントがある項目は実測・確認が必要
+
+vehicle:
+  mass_kg: 0.155              # 計測値 [kg]
+  gear_ratio: 3.5             # 仮説値（要確認）
+  drivetrain_type: "4wd"      # '4wd' or '2wd'
+  drivetrain_efficiency: 0.85 # 仮説値（無次元）
+  # tire_diameter_mm と rolling_resistance_coef は下の tire セクションで定義
+
+motor:
+  # モーターデータを model-data/motor/Summary.csv から読み込む。
+  # name に Summary.csv の MotorName 列と一致する文字列を指定すること。
+  # パスは このYAMLファイルからの相対パス。
+  csv: "../model-data/motor/Summary.csv"
+  name: "Atomic-Tuned 2 PRO"
+  # --- CSVから読み込まれるパラメータのマッピング（参照用） ---
+  # rated_voltage_v  ← VoltageMax_V
+  # no_load_rpm      ← RPM_Max          [仮説: 公式範囲最大を無負荷近似]
+  # stall_torque_Nmm ← Torque_Max_mNm   [仮説: 推奨負荷最大を停止トルク近似]
+  # no_load_current_A← Current_Min_A
+  # stall_current_A  ← Current_Max_A
+
+battery:
+  battery_type: "NiMH"
+  nominal_voltage_v: 2.72     # 実測初期電圧 [V]（runs.csv: voltage_start）
+  capacity_mAh: 2400.0        # [mAh]
+  internal_resistance_ohm: 0.05  # 仮説値（要測定）[Ω]
+  # SOC vs 開路電圧の放電曲線 [(soc 0-1, voltage_v), ...]
+  discharge_curve:
+    - [1.0, 2.72]
+    - [0.8, 2.65]
+    - [0.6, 2.58]
+    - [0.4, 2.52]
+    - [0.2, 2.45]
+    - [0.0, 2.20]
+
+# タイヤ特性（model-data/tire/tire_catalog.csv を参照）
+# tire セクションがある場合、vehicle.tire_diameter_mm より優先される。
+tire:
+  name: "大径ローハイトタイヤ (ミディアム)"
+  diameter_mm: 26.0           # タイヤ外径 [mm]
+  width_mm: 12.0              # タイヤ幅 [mm]
+  material: "medium"          # 材質: hard / medium / soft / sponge / super_hard
+  friction_coef: 0.80         # 横方向摩擦係数 [仮説値]
+  rolling_resistance_coef: 0.025  # 転がり抵抗係数 [仮説値]
+  cornering_stiffness_N_per_rad: 8.0  # コーナリングスティフネス [N/rad] [仮説値]
+
+# ローラー配置（model-data/roller/roller_catalog.csv を参照）
+# roller セクションがある場合: タイヤ横力限界超過分をローラーが補助し、
+#   ローラー摩擦によるコーナー抵抗増加を計算する。
+# 省略した場合: タイヤ横力のみでコーナー速度制限を行う。
+roller:
+  front_diameter_mm: 13.0     # フロントローラー径 [mm]
+  rear_diameter_mm: 19.0      # リアローラー径 [mm]
+  front_position_from_axle_mm: 35.0  # フロント軸から前方距離 [mm] [仮説値]
+  rear_position_from_axle_mm: 45.0   # リア軸から後方距離 [mm] [仮説値]
+  track_width_mm: 105.0              # 左右ローラー外端間距離 [mm] [仮説値]
+  front_friction_coef: 0.05          # フロントローラー摩擦係数 [仮説値]
+  rear_friction_coef: 0.05           # リアローラー摩擦係数 [仮説値]
+
+# シャーシ形状（model-data/chassis/chassis_catalog.csv を参照）
+chassis:
+  chassis_type: "AR"          # ARシャーシ
+  wheelbase_mm: 76.5          # ホイールベース [mm]
+  track_width_front_mm: 90.0  # フロントトレッド幅（タイヤ中心間） [mm] [仮説値]
+  track_width_rear_mm: 92.0   # リアトレッド幅（タイヤ中心間） [mm] [仮説値]
+  mass_kg: 0.080              # シャーシ単体質量 [kg] [仮説値]
+  com_height_mm: 15.0         # 重心高 [mm] [仮説値]

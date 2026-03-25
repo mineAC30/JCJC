@@ -1,0 +1,25 @@
+# JCJCコース設定
+# セクションの元データは model-data/track/ に置き、
+# 下記 column_map でどの CSV 列を使うかを明示する。
+# 別コース用に YAML を複製して sections_csv を差し替えることで複数コースに対応できる。
+
+track:
+  name: "JCJC"
+
+  # --- セクション元データ ---
+  # YAML ファイルからの相対パスで指定する
+  sections_csv: "../model-data/track/jcjc.csv"
+
+  # CSV 列名 → SectionParams フィールド名 のマッピング
+  # CSVの列名を変えた場合はここを更新するだけでよい
+  column_map:
+    section_id:   "section"     # セクション番号
+    section_type: "type"        # 区間種別（straight / curve / slope_up 等）
+    length_mm:    "length_mm"   # 区間長 [mm]
+    slope_deg:    "slope_deg"   # 傾斜角 [deg]（登り=正、下り=負）
+    note:         "note"        # 備考
+
+  # --- コース固有パラメータ（CSV に含まれない情報）---
+  corner_radius_mm: 103.0     # B-3 カーブ半径 [mm]
+  obstacle_height_mm: 5.0     # ゴム段差高さ [mm]（レギュレーション）
+  obstacle_per_lap: 1         # 1周あたりの段差通過回数

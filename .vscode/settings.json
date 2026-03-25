@@ -1,0 +1,12 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^pip install -e \"\\.\\[dev\\]\" -q ; python -m pytest tests/ -v 2>&1$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^New-Item -ItemType Directory -Force \"c:\\\\_devApp\\\\JCJC\\\\model-data\\\\tire\" ; New-Item -ItemType Directory -Force \"c:\\\\_devApp\\\\JCJC\\\\model-data\\\\roller\" ; New-Item -ItemType Directory -Force \"c:\\\\_devApp\\\\JCJC\\\\model-data\\\\chassis\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
